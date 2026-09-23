@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cerise Atelier Veri Paneli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero compact">
+    <nav class="topbar">
+      <a class="brand-small" href="index.html">← Uygulamaya Dön</a>
+    </nav>
+    <div class="brand">
+      <img src="../assets/cerise-logo-reference.png" alt="Cerise Atelier Logo" />
+      <div>
+        <p class="eyebrow">Veri Yönetimi</p>
+        <h1>Veri Paneli</h1>
+        <p>Ülke, suç tipi, kanun maddesi, yaptırım aralığı ve süreç notlarını giriş yapmadan düzenle.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="panelCard" class="card">
+      <div class="result-header">
+        <div>
+          <p class="eyebrow">Veri Yönetimi</p>
+          <h2>Kanun İçeriği Ekle / Güncelle</h2>
+        </div>
+      </div>
+      <div class="admin-grid">
+        <div><label>Ülke</label><select id="adminCountry"></select></div>
+        <div><label>Suç tipi</label><select id="adminCrime"></select></div>
+        <input id="lawArticle" placeholder="Kanun maddesi / başlık" />
+        <textarea id="penalty" rows="3" placeholder="Olası ceza aralığı / yaptırım"></textarea>
+        <textarea id="process" rows="3" placeholder="Yargılama süreci"></textarea>
+        <textarea id="rights" rows="3" placeholder="Haklar ve dikkat edilmesi gerekenler"></textarea>
+        <textarea id="judgeNote" rows="3" placeholder="Yargı değerlendirme simülasyonu notu"></textarea>
+        <textarea id="sourceNote" rows="2" placeholder="Kaynak/veri notu"></textarea>
+      </div>
+      <button id="adminSaveBtn">Kaydet / Güncelle</button>
+      <button id="refreshBtn" class="secondary">Listeyi Yenile</button>
+      <p id="adminStatus" class="muted"></p>
+      <div id="adminList" class="compare-list"></div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

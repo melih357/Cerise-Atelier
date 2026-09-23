@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cerise Atelier Hukuk Asistanı</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="topbar">
+      <a class="brand-small" href="index.html">Cerise Atelier</a>
+      <a class="admin-link" href="admin.html">Veri Paneli</a>
+    </nav>
+    <div class="brand">
+      <button class="logo-trigger" id="logoLoveTrigger" title="Aşk oranını görmek için tıkla">
+        <img src="../assets/cerise-logo-reference.png" alt="Cerise Atelier Logo" />
+      </button>
+      <div>
+        <p class="eyebrow">Hukuki Bilgilendirme Simülasyonu</p>
+        <h1>Cerise Atelier</h1>
+        <p>Olayı anlar, eksik bilgileri sorar, ülkeye göre daha net ve anlaşılır bir sonuç ekranı oluşturur.</p>
+        <button class="love-teaser" id="loveTeaserBtn" type="button">Logoya tıkla: Ya aşık ya suçlusun?</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card warning" id="disclaimer">Bu sistem hukuki tavsiye değildir.</section>
+
+    <section class="card love-panel hidden" id="lovePanel">
+      <div class="love-head">
+        <div>
+          <p class="eyebrow">Gizli Cerise Bölümü</p>
+          <h2>Ya Aşık Ya Suçlusun</h2>
+          <p class="muted">Avukatlık analizi ciddi iş; ama logoya basanların küçük bir aşk dosyası da olsun. İsimleri yaz, kalp dosyasını açalım. Bu bölüm tamamen eğlence amaçlıdır.</p>
+        </div>
+        <button class="ghost close-love" id="closeLoveBtn" type="button">Kapat</button>
+      </div>
+      <div class="love-grid">
+        <div>
+          <label>Kız ismi</label>
+          <input id="girlName" placeholder="Örn: Elif" />
+        </div>
+        <div>
+          <label>Erkek ismi</label>
+          <input id="boyName" placeholder="Örn: Efe" />
+        </div>
+      </div>
+      <button id="loveCalcBtn" type="button">Aşk Oranını Hesapla</button>
+      <div id="loveResult" class="love-result hidden"></div>
+    </section>
+
+    <section class="grid two">
+      <div class="card step-card">
+        <div class="step-badge">1</div>
+        <h2>Olay Analizi</h2>
+        <label>Ülke</label>
+        <select id="countrySelect"></select>
+        <div id="countryInfo" class="country-info"></div>
+        <label id="regionLabel" class="hidden">Eyalet / Bölge</label>
+        <input id="regionInput" class="hidden" placeholder="Örn: California, England, Madrid" />
+        <label>Olayı kısa ve net yaz</label>
+        <textarea id="eventText" rows="8" placeholder="Örn: Bir mağazadan telefon aldım, sonra pişman oldum. Ürün değeri yaklaşık ..."></textarea>
+        <button id="analyzeBtn">Eksik Bilgileri Kontrol Et</button>
+      </div>
+
+      <div class="card step-card">
+        <div class="step-badge">2</div>
+        <h2>Soru Sihirbazı</h2>
+        <p class="muted">Bu bölüm sonucun daha net olması için kritik bilgileri toplar. Çoğu cevabı seçerek doldurabilirsin.</p>
+        <div id="questionsBox" class="question-list empty-state">Önce olayınızı yazıp kontrol edin.</div>
+        <button id="finalBtn" class="secondary hidden">Cevaplara Göre Analiz Oluştur</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <div class="result-header">
+        <div>
+          <p class="eyebrow">Sonuç Ekranı</p>
+          <h2 id="resultTitle">Hukuki Değerlendirme</h2>
+        </div>
+        <div class="score-pill" id="certaintyPill">Netlik: -</div>
+      </div>
+      <div id="summaryBox" class="summary-box"></div>
+      <div id="resultGrid" class="result-grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>Ülke Karşılaştırması</h2>
+      <div class="inline">
+        <select id="crimeSelect"></select>
+        <button id="compareBtn" class="secondary">Karşılaştır</button>
+      </div>
+      <p class="muted">Veritabanındaki ülke ve suç başlıkları karşılaştırılır. Eyalet/bölge farkı olan ülkelerde sonuç değişebilir.</p>
+      <div id="compareBox" class="compare-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
